@@ -1,0 +1,36 @@
+﻿@model Api_Oficina.Models.Cadastropecas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Cadastro de Peças</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nomepeca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nomepeca)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tipopeca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tipopeca)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Valorpeca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Valorpeca)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.CadastropecasId" class="btn btn-primary">Editar</a> |
+    <a asp-action="Index" class="btn btn-danger">Voltar</a>
+</div>

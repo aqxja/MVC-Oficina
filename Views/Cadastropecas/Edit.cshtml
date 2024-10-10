@@ -1,0 +1,44 @@
+﻿@model Api_Oficina.Models.Cadastropecas
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Cadastro de Peças</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CadastropecasId" />
+            <div class="form-group">
+                <label asp-for="Nomepeca" class="control-label"></label>
+                <input asp-for="Nomepeca" class="form-control" />
+                <span asp-validation-for="Nomepeca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tipopeca" class="control-label"></label>
+                <input asp-for="Tipopeca" class="form-control" />
+                <span asp-validation-for="Tipopeca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valorpeca" class="control-label"></label>
+                <input asp-for="Valorpeca" class="form-control" />
+                <span asp-validation-for="Valorpeca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-danger">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

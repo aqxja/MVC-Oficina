@@ -1,0 +1,49 @@
+﻿@model Api_Oficina.Models.Cadastrovendedor
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Cadastrar Vendedor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CadastrovendedorId" />
+            <div class="form-group">
+                <label asp-for="Nomevendedor" class="control-label"></label>
+                <input asp-for="Nomevendedor" class="form-control" />
+                <span asp-validation-for="Nomevendedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cpfvendedor" class="control-label"></label>
+                <input asp-for="Cpfvendedor" class="form-control" />
+                <span asp-validation-for="Cpfvendedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Emailvendedor" class="control-label"></label>
+                <input asp-for="Emailvendedor" class="form-control" />
+                <span asp-validation-for="Emailvendedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Datanascimentovendedor" class="control-label"></label>
+                <input asp-for="Datanascimentovendedor" class="form-control" />
+                <span asp-validation-for="Datanascimentovendedor" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-danger">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

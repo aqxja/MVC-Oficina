@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Api_Oficina.Models.Cadastrovendedor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastrar Vendedor</h1>
+
+<p>
+    <a asp-action="Create" class="btn alert-success">Adicionar um novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nomevendedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpfvendedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emailvendedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Datanascimentovendedor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nomevendedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpfvendedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emailvendedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datanascimentovendedor)
+            </td>
+    <td>
+                        <a class="btn-outline-info" asp-action="Edit" asp-route-id="@item.CadastrovendedorId">Editar</a> |
+                        <a class="btn-outline-info" asp-action="Details" asp-route-id="@item.CadastrovendedorId">Detalhes</a> |
+                        <a class="btn-outline-info" asp-action="Delete" asp-route-id="@item.CadastrovendedorId">Deletar</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

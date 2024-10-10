@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Api_Oficina.Models.Premium>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Adicionar planos Premium</h1>
+
+<p>
+    <a asp-action="Create" class="btn alert-success">Adicionar um novo plano</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipodepremium)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descontodopremium)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipodepremium)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descontodopremium)
+            </td>
+            <td>
+                   <a class="btn-outline-info" asp-action="Edit" asp-route-id="@item.PremiumId">Editar</a> |
+                        <a class="btn-outline-info" asp-action="Details" asp-route-id="@item.PremiumId">Detalhes</a> |
+                        <a class="btn-outline-info" asp-action="Delete" asp-route-id="@item.PremiumId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

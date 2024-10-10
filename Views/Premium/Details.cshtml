@@ -1,0 +1,28 @@
+﻿@model Api_Oficina.Models.Premium
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h1>Editar</h1>
+<div>
+<h4>Premium</h4>
+<hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tipodepremium)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tipodepremium)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descontodopremium)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descontodopremium)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.PremiumId" class="btn-primary">Editar</a> |
+    <a asp-action="Index" class="btn-primary">Voltar</a>
+</div>

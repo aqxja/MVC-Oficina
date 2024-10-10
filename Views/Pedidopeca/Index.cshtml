@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Api_Oficina.Models.Pedidopeca>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Pedidos</h1>
+
+<p>
+    <a asp-action="Create" class="btn alert-success">Adicionar um Pedido</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CadastropecasId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pedido.PedidoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CadastropecasId)
+            </td>
+            <td>
+                    <a class="btn-outline-info" asp-action="Edit" asp-route-id="@item.PedidopecaId">Editar</a> |
+                        <a class="btn-outline-info" asp-action="Details" asp-route-id="@item.PedidopecaId">Detalhes</a> |
+                        <a class="btn-outline-info" asp-action="Delete" asp-route-id="@item.PedidopecaId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

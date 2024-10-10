@@ -1,0 +1,39 @@
+﻿@model Api_Oficina.Models.Premium
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Premium</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PremiumId" />
+            <div class="form-group">
+                <label asp-for="Tipodepremium" class="control-label"></label>
+                <input asp-for="Tipodepremium" class="form-control" />
+                <span asp-validation-for="Tipodepremium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descontodopremium" class="control-label"></label>
+                <input asp-for="Descontodopremium" class="form-control" />
+                <span asp-validation-for="Descontodopremium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" /
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn-danger">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
